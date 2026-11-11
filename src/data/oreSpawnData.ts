@@ -4,11 +4,17 @@ export const measuredOreChance = [
   { level: 96, chance: 22.79 },
 ] as const;
 
-// Individual ore shares have not been measured yet. Keep them unavailable rather than
-// inventing a distribution that would imply server-backed accuracy.
+// Observed individual spawn chances at level 96. Above/below this level, the
+// current estimate keeps these ore shares proportional to the modeled total.
+export const measuredOreTypes = {
+  level: 96,
+  coal: 7.33,
+  copper: 5.47,
+  gold: 2.29,
+} as const;
+
 export const oreDistribution = [
-  { name: 'Coal', color: '#9b8a6c' }, { name: 'Copper', color: '#dc885b' },
-  { name: 'Iron', color: '#b8b9b1' }, { name: 'Gold', color: '#e5bd59' },
-  { name: 'Redstone', color: '#d7584e' }, { name: 'Lapis', color: '#6088d8' },
-  { name: 'Diamond', color: '#72d7d0' }, { name: 'Emerald', color: '#62ba83' },
+  { key: 'coal', name: 'Coal', color: '#9b8a6c' },
+  { key: 'copper', name: 'Copper', color: '#dc885b' },
+  { key: 'gold', name: 'Gold', color: '#e5bd59' },
 ] as const;
